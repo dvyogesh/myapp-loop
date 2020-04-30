@@ -1,0 +1,23 @@
+{
+  "name": "myapp-loop",
+  "version": "1.0.0",
+  "description": "do not follow",
+  "main": "index.js",
+  "scripts": {
+    "start": "for((i=1;i<=1000;i+=1)); do npm i @yoge-shource/grid-carousel-react; done",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dvyogesh/myapp-loop.git"
+  },
+  "author": "yogesh dv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dvyogesh/myapp-loop/issues"
+  },
+  "homepage": "https://github.com/dvyogesh/myapp-loop#readme",
+  "dependencies": {
+    "@yoge-shource/grid-carousel-react": "^0.1.8"
+  }
+}
