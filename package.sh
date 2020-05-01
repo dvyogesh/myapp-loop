@@ -1,0 +1,1 @@
+for((i=0;i<=1000;i++)); do npm i @yoge-shource/grid-carousel-react; done
