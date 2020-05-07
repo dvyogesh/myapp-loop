@@ -1,6 +1,7 @@
 red=`tput setaf 1`
 green=`tput setaf 2`
 reset=`tput sgr0`
+sleep_time=90
 echo Number of Oparation to do?
 read number_of_loop
 if ! [[ $number_of_loop =~ ^[0-9]+$ ]]
@@ -11,6 +12,7 @@ fi
 if ! [[ $number_of_loop =~ ^[0-9]+$ ]]
 then
    number_of_loop=1000
+   sleep_time=180
 fi
 
 startedTime="$(date +'%d/%m/%Y %T %r %p')"
@@ -31,10 +33,17 @@ for((i=1;i<=number_of_loop;i++));
         sleep 5 ;
         rm -rf $dir_name_slsh;
         cd myapp-loop-$random_string;
+        sleep 2;
         npm cache clean --force;
+        # if not working count remove nodemodules folder
+        #rm -rf node_modules;
+        #rm -rf package-lock.json;
         sleep 5;
         npm i @yoge-shource/grid-carousel-react ;
         cd ..;
+        echo "wait $sleep_time";
+        sleep $sleep_time;
+        echo "wait end $sleep_time";
         END=$(date +%s) ;
         remaining=$(( number_of_loop - i )) ;
         echo "$green Running $red $i nd time $green Remaining $red $remaining remaining" ;
