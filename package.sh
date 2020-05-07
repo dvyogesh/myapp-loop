@@ -2,12 +2,19 @@ red=`tput setaf 1`
 green=`tput setaf 2`
 reset=`tput sgr0`
 sleep_time=90
-echo Number of Oparation to do?
-read number_of_loop
+echo $1;
+
+number_of_loop=$1;
+if ! [[ $number_of_loop =~ ^[0-9]+$ ]]
+then
+    echo "$red Sorry integers only $reset or run $red bash package.sh 100, $reset 100=any number" ;
+    echo Number of Oparation to do?
+    read number_of_loop
+fi
 if ! [[ $number_of_loop =~ ^[0-9]+$ ]]
 then
     echo "$red Sorry integers only $reset" ;
-read number_of_loop
+    read number_of_loop
 fi
 if ! [[ $number_of_loop =~ ^[0-9]+$ ]]
 then
@@ -15,10 +22,15 @@ then
    sleep_time=180
 fi
 
+echo "Number of oparations $number_of_loop";
+
+
+# to run background screen -S <loopMyapp session name> -d -m <Command>
+
 startedTime="$(date +'%d/%m/%Y %T %r %p')"
 
 #randomString=`openssl rand -base64 12`;
-echo "startedTime $randomString " 
+echo "startedTime $randomString "
 
 echo "startedTime $startedTime " 
 for((i=1;i<=number_of_loop;i++));
