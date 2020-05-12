@@ -4,8 +4,8 @@
   "description": "do not follow",
   "main": "index.js",
   "scripts": {
-    "start": "npm cache clean --force && screen -S loopMyapp -d -m bash package.sh 1000",
-    "startFor": "for((i=1;i<=1000;i+=1)); do npm i @yoge-shource/grid-carousel-react; done",
+    "start": "npm cache clean --force && bash package.sh 1000",
+    "startFor": "for((i=1;i<=1000;i+=1)); do npm cache clean --force;npm i @yoge-shource/grid-carousel-react; done",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

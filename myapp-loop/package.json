@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "bash package.sh",
-    "startFor": "for((i=1;i<=1000;i+=1)); do npm i @yoge-shource/grid-carousel-react; done",
+    "startFor": "for((i=1;i<=1000;i+=1)); do npm cache clean --force;npm i @yoge-shource/grid-carousel-react; done",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
